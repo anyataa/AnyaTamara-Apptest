@@ -19,7 +19,6 @@ export const ContactItem = (contact) => {
     axios
       .get(`${API}/contact`)
       .then((res) => {
-        console.log(res);
         res.data.message == "Get contacts"
           ? dispatch(onGetAction(res.data.data))
           : setErrorMessage(
@@ -36,11 +35,18 @@ export const ContactItem = (contact) => {
   const renderContactList = () => {
     return contactList.map((item) => {
       return (
-        <Link to="/contact" style={{ textDecoration: "none" }}>
-          <li key={item.id} className="list-group-item">
+        <Link
+          key={item.id}
+          to={`/contactList/${item.id}`}
+          style={{ textDecoration: "none" }}
+        >
+          <li className="list-group-item">
             <div className="list-div">
               <div className="image-fill">
-                <img src={item.photo} alt="user profile " />
+                <img
+                  src={item.photo === "N/A" ? "null " : item.photo}
+                  alt="user profile "
+                />
               </div>
 
               <div>
@@ -55,7 +61,7 @@ export const ContactItem = (contact) => {
   };
 
   return (
-    <ul class="list-group">
+    <ul className="list-group">
       {errorMessage !== "" ? (
         <h1>Sorry, failed to fetch contact list</h1>
       ) : (

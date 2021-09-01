@@ -4,6 +4,7 @@ import { ListContact } from "./ContactList/Index";
 import { LeftBar } from "./LeftBar/Index";
 import { Navbar } from "./Navbar/Index";
 import { HomePage } from "./HomePage/Index";
+import { Footer } from "./Footer/Index";
 
 function App() {
   return (
@@ -13,11 +14,12 @@ function App() {
         <div class="d-flex justify-content-around">
           <LeftBar />
           <Switch>
-            <Route path="" component={HomePage}></Route>
+            <Route path="/" exact component={HomePage}></Route>
             <Route path="/contactList" component={ListContact}></Route>
           </Switch>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

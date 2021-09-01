@@ -17,12 +17,9 @@ export const LeftBar = () => {
 
   return (
     <div className="left">
-      {console.log(path)}
       <div className="left-top">
         <Link style={{ textDecoration: "none" }} to="/">
-          <div
-            className={path == "/home" ? "item-wrapper active" : "item-wrapper"}
-          >
+          <div className={path == "/" ? "item-wrapper active" : "item-wrapper"}>
             <FaHome className="label-size" />
             <p className="label label-size">Home</p>
           </div>

@@ -11,10 +11,11 @@ var Reducer = (state = INITIAL_STATE, action) => {
     case "UPDATE":
       return {
         ...INITIAL_STATE,
-        id: action.payload.data.id,
-        firstName: action.payload.data.firstName,
-        lastName: action.payload.data.lastName,
-        age: action.payload.data.age,
+        id: action.payload.id,
+        firstName: action.payload.firstName,
+        lastName: action.payload.lastName,
+        age: action.payload.age,
+        photo: action.payload.photo,
       };
     default:
       return state;

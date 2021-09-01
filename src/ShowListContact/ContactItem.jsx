@@ -33,21 +33,24 @@ export const ContactItem = (contact) => {
   };
 
   return (
-    <div style={{ backgroundColor: "red" }} className="right container">
-      {errorMessage !== "" ? (
-        <h1>Sorry, failed to fetch contact list</h1>
-      ) : (
-        contactList.map((item) => {
-          return (
-            <div key={item.id}>
-              <h1>{item.id}</h1>
-              <h1>{item.firstName}</h1>
-              <h1>{item.lastName}</h1>
-              <h1>{item.age}</h1>
-            </div>
-          );
-        })
-      )}
+    <div className="right container">
+      <ul class="list-group">
+        {errorMessage !== "" ? (
+          <h1>Sorry, failed to fetch contact list</h1>
+        ) : (
+          contactList.map((item) => {
+            return (
+              <li key={item.id} className="list-group-item">
+                <div className="list-div">
+                  <h2>{item.firstName + " " + item.lastName}</h2>
+                  <h3>{item.age}</h3>
+                  <p>{item.id}</p>
+                </div>
+              </li>
+            );
+          })
+        )}
+      </ul>
     </div>
   );
 };

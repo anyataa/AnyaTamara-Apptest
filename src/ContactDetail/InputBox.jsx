@@ -1,12 +1,17 @@
 import React from "react";
 
-export const InputBox = (label, successMessage, placeHolder, type) => {
+export const InputBox = (props) => {
   return (
     <div className="card-notification">
       <div className="divide-for-manage ">
         <div>
-          <p className="col-grey">{label}</p>
-          <input placeholder="yes" className="col-dark-grey " type="text" />
+          <p className="col-grey">{props.label}</p>
+          <input
+            value={props.value}
+            className="col-dark-grey "
+            type={props.type}
+            onInput={(e) => props.method(e.target.value)}
+          />
         </div>
         <p
           style={{

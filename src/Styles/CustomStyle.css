@@ -1,11 +1,13 @@
 @import url(./GlobalStyle.css);
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url(./ImageInput.css);
+@import url(./DetailContact.css);
 .left {
   margin-right: 4rem;
   margin-top: 10vh;
   width: 14vw;
-  height: 75vh;
-  padding: 47px 0 50px 0;
+  height: 82.5vh;
+  padding: 47px 40px 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,7 +81,7 @@
 .right {
   margin-top: 10vh;
   width: 65vw;
-  min-height: 75vh;
+  height: 82.5vh;
   padding: 25px 50px;
   border-radius: 25px;
   background: #ffffff;
@@ -126,8 +128,8 @@
 }
 
 .image-fill {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   margin-right: 2rem;
 }
 
@@ -350,77 +352,6 @@
   color: white;
 }
 
-.card-notification-button {
-  background-color: #6379f4;
-  padding: 20px 20px;
-  width: 100%;
-  height: 2rem;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 2rem;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-
-.card-notification-button h2 {
-  color: #ffffff;
-}
-
-.card-notification-button:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-}
-
-.card-notification {
-  padding: 20px 20px;
-  width: 90%;
-  height: 4rem;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 2rem;
-}
-
-.card-notification i {
-  margin-right: 30px;
-  font-size: 2rem;
-  font-weight: 1px;
-}
-
-.card-notification p {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 .bottom-bar {
   position: fixed;
   height: 3rem;
@@ -523,37 +454,6 @@
   width: 30rem;
 }
 
-.card-notification-button {
-  background-color: #6379f4;
-  padding: 20px 20px;
-  width: 100%;
-  height: 5rem;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 2rem;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  cursor: pointer;
-}
-
-.card-notification-button h2 {
-  color: #ffffff;
-}
-
 .right-change-password {
   margin-top: calc(2rem + 10vh);
   width: 65%;
@@ -608,51 +508,6 @@
   cursor: pointer;
 }
 
-.input-create-new-password {
-  width: 60%;
-  height: 4rem;
-  border-bottom: 2px solid #747474;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 4rem;
-  color: rgba(169, 169, 169, 0.8);
-}
-
-.input-create-new-password input {
-  font-size: 20px;
-  width: 80%;
-  color: rgba(169, 169, 169, 0.8);
-}
-
-.input-create-new-password h3 {
-  margin-right: 15px;
-}
-
-.input-create-new-password i {
-  font-size: 20px;
-  color: rgba(169, 169, 169, 0.8);
-}
-
-.input-create-new-password label {
-  font-size: 25px;
-}
-
-.input-create-new-password form {
-  width: 100%;
-}
-
 .changeGrey {
   border-bottom: 2px solid #747474;
 }
@@ -692,6 +547,32 @@
   cursor: pointer;
 }
 
+.input-create-new-button .set-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.input-create-new-button .set-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.input-create-new-button .set-even {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .input-create-new-button button {
   outline: none;
   border: none;
@@ -704,106 +585,5 @@
   font-size: 20px;
   color: #747474;
   font-weight: bold;
-}
-
-.bottom-personal-information-container {
-  width: 92%;
-  height: auto;
-  margin-left: 2rem;
-  padding: 50px 0 0px 40px;
-  border-radius: 25px;
-  background-color: #ffffff;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.bottom-personal-information-container ul {
-  text-decoration: none;
-  list-style: none;
-  width: 100%;
-  margin-left: -3rem;
-}
-
-.bottom-personal-information-container .card-notification {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 100%;
-  height: 4.5rem;
-}
-
-.bottom-personal-information-container p {
-  margin-top: -0.5rem;
-}
-
-.bottom-personal-information-container input {
-  border: none;
-  outline: none;
-  height: 20px;
-  font-size: 20px;
-  width: 20vw;
-  margin-top: -1rem;
-  cursor: pointer;
-}
-
-.bottom-personal-information-container input :focus {
-  color: #4cedb3;
-}
-
-.bottom-personal-information-container input::-webkit-outer-spin-button,
-.bottom-personal-information-container input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.create-contact-avatar-input {
-  width: 150px;
-  height: 150px;
-  background-color: #e2e2e2;
-  background-image: url("./Icons/person.svg");
-  background-size: 45px 45px;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 150px;
-  cursor: pointer;
-}
-
-.create-contact-avatar-input:hover {
-  min-width: 60px;
-  height: 60px;
-  background-color: rgba(101, 124, 236, 0.8);
-  background-image: url("./Icons/person.svg");
-  background-size: 45px 45px;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.create-contact-form {
-  cursor: pointer;
-}
-
-.create-contact-form input {
-  border: none;
-  color: #747474;
-  background-color: white;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.create-contact-form input:hover {
-  color: #201e1e;
 }
 /*# sourceMappingURL=CustomStyle.css.map */

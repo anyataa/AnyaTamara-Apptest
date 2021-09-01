@@ -106,6 +106,13 @@ class ImageInput extends React.Component {
       style.backgroundRepeat = "no-repeat";
       style.backgroundPosition = "center";
       style.backgroundSize = "cover";
+    } else if (user.photo.length > 4) {
+      // console.log("N/A not here", user.photo.length);
+      style.backgroundImage = `url("${user.photo}")`;
+      style.backgroundRepeat = "no-repeat";
+      style.backgroundPosition = "center";
+      style.backgroundSize = "cover";
+      console.log(user.userImage);
     }
 
     return (

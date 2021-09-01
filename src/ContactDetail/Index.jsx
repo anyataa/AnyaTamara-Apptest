@@ -1,8 +1,10 @@
 import axios from "axios";
 import React from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useRouteMatch } from "react-router-dom";
+import swal from "sweetalert";
 import { onUpdateContact } from "../actions";
 import { API } from "../Util/constant";
 import ImageInput from "./ImageInput";
@@ -10,38 +12,150 @@ import { InputBox } from "./InputBox";
 
 export const ContactDetail = (props) => {
   const { path } = useRouteMatch();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [age, setage] = useState(0);
+  const [photo, setPhoto] = useState("");
   const dispatch = useDispatch();
   const contact = useSelector((state) => state.contact);
 
   useEffect(() => {
     getContactById();
   }, []);
+
   const getContactById = () => {
-    axios
-      .get(`${API}/contact/${props.match.params.id}`)
-      .then((res) => {
-        if (res.data.message.includes("Get")) {
-          console.log(res.data.data.id);
-          console.log(contact);
-          dispatch(
-            onUpdateContact({
-              ...contact,
-              id: res.data.data.id,
-              firstName: res.data.data.firstName,
-              lastName: res.data.data.lastName,
-              photo: res.data.data.photo,
-            })
-          );
-        }
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    props.match.params.id !== "addContact"
+      ? axios
+          .get(`${API}/contact/${props.match.params.id}`)
+          .then((res) => {
+            if (res.data.message.includes("Get")) {
+              setFirstName(res.data.data.firstName);
+              setLastName(res.data.data.lastName);
+              setage(res.data.data.age);
+              dispatch(
+                onUpdateContact({
+                  ...contact,
+                  age: res.data.data.age,
+                  id: res.data.data.id,
+                  firstName: res.data.data.firstName,
+                  lastName: res.data.data.lastName,
+                  photo: res.data.data.photo,
+                })
+              );
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      : console.log("POST");
   };
+
   const submitForm = (e) => {
     e.preventDefault();
-    console.log("clicked");
+  };
+
+  const onDelete = (willDelete) => {
+    swal({
+      title: "Are you sure you want to delete?",
+      text: "you can not undo this action ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        axios
+          .delete(`${API}/contact/${props.match.params.id}`)
+          .then((res) => {
+            if (res.data.message.includes("deleted")) {
+              swal("Deleted!", {
+                icon: "success",
+              });
+              dispatch(
+                onUpdateContact({
+                  ...contact,
+                  id: "",
+                  firstName: "",
+                  lastName: "",
+                  photo: "",
+                  age: 0,
+                })
+              );
+            }
+          })
+          .catch((error) => {
+            swal({
+              title: "Error",
+              text: "Please try again and check your connection",
+              icon: "error",
+              button: "Done",
+            });
+            console.log(error);
+          });
+      } else {
+        swal("Cancel the delete action");
+      }
+    });
+  };
+
+  const putMehod = () => {
+    axios
+      .put(`${API}/contact/${props.match.params.id}`, {
+        firstName,
+        lastName,
+        age,
+        photo: contact.photo,
+      })
+      .then((res) => {
+        console.log(res);
+        dispatch(
+          onUpdateContact({
+            ...contact,
+            age: res.data.data.age,
+            id: res.data.data.id,
+            firstName: res.data.data.firstName,
+            lastName: res.data.data.lastName,
+            photo: res.data.data.photo,
+          })
+        );
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const postMethod = () => {
+    axios
+      .post(`${API}/contact`, {
+        firstName,
+        lastName,
+        age,
+        photo: contact.photo,
+      })
+      .then((res) => {
+        if (res.data.message.includes("contact saved")) {
+          swal({
+            title: "Contact Saved",
+            text: "Successfuly saving the contact",
+            icon: "success",
+            button: "Done",
+          });
+        } else {
+          console.log(res);
+        }
+      })
+      .catch((e) => {
+        swal({
+          title: "Error",
+          text: "Please try again and check your connection",
+          icon: "error",
+          button: "Done",
+        });
+        console.log(e);
+      });
+  };
+
+  const onSubmit = (e) => {
+    props.match.params.id !== "addContact" ? putMehod() : postMethod();
   };
 
   return (
@@ -56,23 +170,38 @@ export const ContactDetail = (props) => {
             name="avatarURL"
             maxHeight={64}
           />
+          <p className="center-paragraf">
+            <span className="col-grey-purple"> Upload image</span>
+            <br /> or
+          </p>
+          <input
+            placeholder="Copy Image URL Here"
+            className="image-url"
+            type="text"
+            value={photo}
+            onInput={(e) => setPhoto(e.target.value)}
+          />
         </form>
       </div>
 
-      {/* Top End */}
-
       <div className="bottom-personal-information-container">
         <ul>
-          {/* <!-- 1 --> */}
           <li>
+            {/* <InputBox
+              label="First Name"
+              value={firstName}
+              type={"text"}
+              method={() => setFirstName()}
+            /> */}
             <div className="card-notification">
               <div className="divide-for-manage ">
                 <div>
                   <p className="col-grey">First Name</p>
                   <input
-                    placeholder={contact.firstName}
+                    value={firstName}
                     className="col-dark-grey "
                     type="text"
+                    onInput={(e) => setFirstName(e.target.value)}
                   />
                 </div>
                 <p
@@ -88,16 +217,18 @@ export const ContactDetail = (props) => {
               </div>
             </div>
           </li>
-          {/* <!-- 2 --> */}
+
           <li>
+            {/* <InputBox label="Last Name" value={lastName} type={"text"} /> */}
             <div className="card-notification">
               <div className="divide-for-manage ">
                 <div>
                   <p className="col-grey">Last Name</p>
                   <input
-                    placeholder={contact.lastName}
+                    value={lastName}
                     className="col-dark-grey "
                     type="text"
+                    onInput={(e) => setLastName(e.target.value)}
                   />
                 </div>
                 <p
@@ -113,30 +244,56 @@ export const ContactDetail = (props) => {
               </div>
             </div>
           </li>
-          {/* <!-- 3 --> */}
-          {/* <!-- 4 --> */}
-          <li>
-            <div>
-              <Link
-                to="/profil/personalinfo/upgrade"
-                style={{ textDecoration: "none" }}
-              >
-                <div className="card-notification-button ">
-                  <h2>Submit</h2>
-                </div>
-              </Link>
-              <Link
-                to="/profil/personalinfo/upgrade"
-                style={{ textDecoration: "none" }}
-              >
-                <div className="card-notification-button ">
-                  <h2>Cancel</h2>
-                </div>
-              </Link>
+          {/* <InputBox label="Age" value={age} type={"number"} /> */}
+          <div className="card-notification">
+            <div className="divide-for-manage ">
+              <div>
+                <p className="col-grey">Age</p>
+                <input
+                  value={age}
+                  className="col-dark-grey "
+                  type="number"
+                  onInput={(e) => setage(e.target.value)}
+                />
+              </div>
+              <p
+                style={{
+                  fontSize: "18px",
+                  textDecoration: "none",
+                  paddingLeft: "0vw",
+                  color: "#6379F4",
+                  cursor: "default",
+                }}
+                className="col-secondary"
+              ></p>
             </div>
-          </li>
+          </div>
+          <li></li>
         </ul>
-        {/* <!-- Finish --> */}
+      </div>
+      <div className="set-transfer-button-confirmation">
+        <button
+          style={{ border: "none", backgroundColor: "transparent" }}
+          to={`/transfer/${props.match.params.id}/confirmation`}
+        >
+          <input
+            onClick={onDelete}
+            type="button"
+            value="Delete"
+            className="bottom-button bg-danger"
+          />
+        </button>
+        <button
+          style={{ border: "none", backgroundColor: "transparent" }}
+          to={`/transfer/${props.match.params.id}/confirmation`}
+        >
+          <input
+            onClick={onSubmit}
+            type="button"
+            value="Submit"
+            className="bottom-button"
+          />
+        </button>
       </div>
     </div>
   );

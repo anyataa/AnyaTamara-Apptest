@@ -35,10 +35,12 @@ export const LeftBar = () => {
           </div>
         </Link>
 
-        <Link style={{ textDecoration: "none" }} to="/addContact">
+        <Link style={{ textDecoration: "none" }} to="/contactList/addContact">
           <div
             className={
-              path == "/addContact" ? "item-wrapper active" : "item-wrapper"
+              path == "/contactList/addContact"
+                ? "item-wrapper active"
+                : "item-wrapper"
             }
           >
             <FaPlus className="label-size" />

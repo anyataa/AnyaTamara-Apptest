@@ -1,0 +1,149 @@
+.bottom-personal-information-container {
+  width: 92%;
+  height: auto;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  padding: 50px 0 0px 40px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bottom-personal-information-container ul {
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+  margin-left: -3rem;
+}
+
+.bottom-personal-information-container p {
+  margin-top: -0.5rem;
+}
+
+.bottom-personal-information-container input {
+  border: none;
+  outline: none;
+  height: 20px;
+  font-size: 20px;
+  width: 20vw;
+  margin-top: -5rem;
+  cursor: pointer;
+}
+
+.center-paragraf {
+  text-align: center;
+}
+
+.col-grey-purple {
+  color: gray;
+}
+
+.col-grey-purple:hover {
+  color: #6379f4;
+}
+
+.card-notification {
+  padding: 20px 20px;
+  width: 90%;
+  height: 5rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+.card-notification i {
+  margin-right: 30px;
+  font-size: 2rem;
+  font-weight: 1px;
+}
+
+.card-notification p {
+  padding-top: 10px;
+}
+
+.set-transfer-button-confirmation {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10%;
+  bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* background-color: palegoldenrod; */
+}
+
+.bottom-button {
+  background-color: #6379f4;
+  border-radius: 20px;
+  border: none;
+  padding: 20px 20px;
+  width: 7.5rem;
+  color: #ffffff;
+}
+
+.card-notification-button:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.card-notification-button {
+  background-color: #6379f4;
+  padding: 20px 20px;
+  width: 50%;
+  height: 5rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.card-notification-button h2 {
+  color: #ffffff;
+}
+/*# sourceMappingURL=DetailContact.css.map */

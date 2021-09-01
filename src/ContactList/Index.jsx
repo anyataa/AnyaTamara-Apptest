@@ -11,6 +11,7 @@ export const ListContact = () => {
       <Switch>
         <Route path={`${path}`} component={ContactItem} exact></Route>
         <Route path={`${path}/:id`} component={ContactDetail}></Route>
+        <Route path={`${path}/addContact`} component={ContactDetail}></Route>
       </Switch>
     </div>
   );

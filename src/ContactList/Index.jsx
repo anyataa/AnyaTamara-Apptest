@@ -3,8 +3,7 @@ import { ContactItem } from "./ContactItem";
 
 export const ListContact = () => {
   return (
-    <div>
-      <h1>Contactivy</h1>
+    <div className="right container">
       <ContactItem></ContactItem>
     </div>
   );

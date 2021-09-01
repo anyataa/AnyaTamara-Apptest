@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onGetAction } from "../actions/contactListAction";
 import { useEffect, useState } from "react";
 import { API } from "../Util/constant";
+import { Link } from "react-router-dom";
 
 export const ContactItem = (contact) => {
   const dispatch = useDispatch();
@@ -32,25 +33,34 @@ export const ContactItem = (contact) => {
       });
   };
 
+  const renderContactList = () => {
+    return contactList.map((item) => {
+      return (
+        <Link to="/contact" style={{ textDecoration: "none" }}>
+          <li key={item.id} className="list-group-item">
+            <div className="list-div">
+              <div className="image-fill">
+                <img src={item.photo} alt="user profile " />
+              </div>
+
+              <div>
+                <h2>{item.firstName + " " + item.lastName}</h2>
+                <p>{item.age} years old</p>
+              </div>
+            </div>
+          </li>
+        </Link>
+      );
+    });
+  };
+
   return (
-    <div className="right container">
-      <ul class="list-group">
-        {errorMessage !== "" ? (
-          <h1>Sorry, failed to fetch contact list</h1>
-        ) : (
-          contactList.map((item) => {
-            return (
-              <li key={item.id} className="list-group-item">
-                <div className="list-div">
-                  <h2>{item.firstName + " " + item.lastName}</h2>
-                  <h3>{item.age}</h3>
-                  <p>{item.id}</p>
-                </div>
-              </li>
-            );
-          })
-        )}
-      </ul>
-    </div>
+    <ul class="list-group">
+      {errorMessage !== "" ? (
+        <h1>Sorry, failed to fetch contact list</h1>
+      ) : (
+        renderContactList()
+      )}
+    </ul>
   );
 };

@@ -1,0 +1,131 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+}
+
+.phone-screen {
+  width: 100%;
+  max-width: 450px;
+  height: 90vh;
+  border: 10px solid blue;
+  margin: 5vh auto;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #f6f6f6;
+  background-color: #121212;
+}
+
+.header,
+.content,
+.footer {
+  padding: 15px;
+}
+
+.header {
+  background-color: #222327;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 65px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.content {
+  overflow-y: auto;
+}
+
+.categories {
+  padding-left: 20px;
+  list-style-type: none;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.categories li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+
+.categories svg {
+  margin-right: 20px;
+  fill: #7c7d81;
+}
+
+.recent h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cover {
+  width: 60px;
+  height: 60px;
+  background-color: peachpuff;
+  margin-right: 20px;
+}
+
+.playlist {
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.playlist svg {
+  fill: #7c7d81;
+}
+
+.info h1 {
+  font-size: 20px;
+}
+
+.info p {
+  color: #7c7d81;
+  font-size: 16px;
+}
+/*# sourceMappingURL=PhoneStyle.css.map */

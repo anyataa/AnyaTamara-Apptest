@@ -1,70 +1,61 @@
 import React from "react";
 import {
-  FaBorderAll,
-  FaLongArrowAltUp,
+  FaBook,
+  FaCode,
+  FaHome,
+  FaMobile,
   FaPlus,
-  FaServicestack,
-  FaUserAlt,
-  FaWallet,
+  FaSmile,
 } from "react-icons/fa";
 import { Link, useRouteMatch } from "react-router-dom";
 
 export const LeftBar = () => {
   const { path } = useRouteMatch();
+  const goToGitHub = () => {
+    window.location.href = "https://github.com/anyataa/AnyaTamara-Apptest";
+  };
 
   return (
     <div className="left">
+      {console.log(path)}
       <div className="left-top">
-        <Link style={{ textDecoration: "none" }} to="/dashboard">
+        <Link style={{ textDecoration: "none" }} to="/">
           <div
-            className={
-              path == "/dashboard" ? "item-wrapper active" : "item-wrapper"
-            }
+            className={path == "/home" ? "item-wrapper active" : "item-wrapper"}
           >
-            <FaBorderAll className="label-size" />
-            <p className="label label-size">Dashboard</p>
+            <FaHome className="label-size" />
+            <p className="label label-size">Home</p>
           </div>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/transfer">
+        <Link style={{ textDecoration: "none" }} to="/contactList">
           <div
             className={
-              path == "/transfer" ? "item-wrapper active" : "item-wrapper"
+              path == "/contactList" ? "item-wrapper active" : "item-wrapper"
             }
           >
-            <FaLongArrowAltUp className="label-size" />
+            <FaBook className="label-size" />
             <p className="label label-size">Contact List</p>
           </div>
         </Link>
 
-        <Link style={{ textDecoration: "none" }} to="/billing">
+        <Link style={{ textDecoration: "none" }} to="/addContact">
           <div
             className={
-              path == "/billing" ? "item-wrapper active" : "item-wrapper"
-            }
-          >
-            <FaServicestack className="label-size" />
-            <p className="label label-size">Add Contact</p>
-          </div>
-        </Link>
-
-        <Link style={{ textDecoration: "none" }} to="/topup">
-          <div
-            className={
-              path == "/topup" ? "item-wrapper active" : "item-wrapper"
+              path == "/addContact" ? "item-wrapper active" : "item-wrapper"
             }
           >
             <FaPlus className="label-size" />
-            <p className="label label-size">Top Up</p>
+            <p className="label label-size">Add Contact</p>
           </div>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/retrieval">
+        <Link style={{ textDecoration: "none" }} to="/phoneView">
           <div
             className={
               path == "/retrieval" ? "item-wrapper active" : "item-wrapper"
             }
           >
-            <FaWallet className="label-size" />
-            <p className="label label-size">Retrieval</p>
+            <FaMobile className="label-size" />
+            <p className="label label-size">Phone View</p>
           </div>
         </Link>
 
@@ -74,14 +65,16 @@ export const LeftBar = () => {
               path == "/profil" ? "item-wrapper active" : "item-wrapper"
             }
           >
-            <FaUserAlt className="label-size" />
-            <p className="label label-size">Profile</p>
+            <FaSmile className="label-size" />
+            <p className="label label-size">UI Design</p>
           </div>
         </Link>
       </div>
       <div className="item-wrapper">
-        <img src="../assets/images/log-out.svg" alt="" />
-        <p className="label">Logout</p>
+        <FaCode className="label-size" />
+        <p onClick={(e) => goToGitHub()} className="label">
+          Source Code
+        </p>
       </div>
     </div>
   );

@@ -4,3 +4,10 @@ export const onGetAction = (data) => {
     payload: data,
   };
 };
+
+export const onUpdate = (data) => {
+  return {
+    type: "UPDATE",
+    payload: data,
+  };
+};

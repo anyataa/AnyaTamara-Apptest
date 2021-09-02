@@ -2,6 +2,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url(./ImageInput.css);
 @import url(./DetailContact.css);
+@import url(./Home.css);
+
+// Setting Color
+.bg-primary {
+  background-color: rgb(250, 252, 255);
+}
+
+.bg-secondary {
+  background-color: #6379f4;
+}
+.bg-grey {
+  background-color: #dadada;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.bg-red {
+  background-color: #ff5b37;
+}
+
+.bg-green {
+  background-color: #d0fff1;
+  color: #6379f4;
+}
+.border-secondary {
+  border: 2px solid #6379f4;
+}
+
+.col-primary {
+  color: #e5e5e5;
+}
+
+.col-secondary {
+  color: #6379f4;
+}
+
+.col-white {
+  color: #fff !important;
+}
+
+.col-white50 {
+  color: #221619;
+}
+.col-mid-grey {
+  color: #88888f;
+}
+.col-grey {
+  color: #7a7886;
+}
+
+.col-dark-grey {
+  color: #3a3d42;
+}
+
+.col-red {
+  color: #ff5b37;
+}
+.col-green {
+  color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity));
+}
+.text-center {
+  text-align: center;
+}
 
 .left {
   //   position: fixed;
@@ -42,8 +107,8 @@
 }
 
 .active {
-  color: #6379f4;
-  border-left: 5px solid #6379f4;
+  color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity));
+  border-left: 5px solid #5273e0;
 }
 
 .label {
@@ -92,6 +157,8 @@
   }
 
   .list-div {
+    margin-right: 10px;
+    margin-left: 10px;
     border-radius: 30px;
     padding: 1rem;
     background: #ffffff;
@@ -102,7 +169,7 @@
     // background-color: #6379f4;
   }
   .list-div:hover {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    border: solid 3px #5273e0;
   }
 }
 
@@ -124,7 +191,7 @@
 }
 
 .label-brand:hover {
-  color: purple;
+  color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity));
 }
 
 // Main Code for Navbar
@@ -301,7 +368,7 @@
   }
   p {
     font-size: 18px;
-    color: white;
+    color: #6379f4;
   }
 }
 // detail

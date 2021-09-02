@@ -1,9 +1,10 @@
 import React from "react";
+import { TopHome } from "./Top";
 
 export const HomePage = () => {
   return (
     <div className="right container">
-      <h1>Home</h1>
+      <TopHome></TopHome>
     </div>
   );
 };

@@ -103,13 +103,15 @@ export const ContactDetail = (props) => {
         firstName,
         lastName,
         age,
-        photo: contact.photo,
+        photo,
       })
       .then((res) => {
         if (res.data.message.includes("Contact edited")) {
           swal({
             title: "Contact Edited",
-            text: "Successfuly saving the changes",
+            text: `Successfuly saving ${
+              res.data.data.firstName + " " + res.data.data.lastName
+            }`,
             icon: "success",
             button: "Done",
           });
@@ -137,13 +139,13 @@ export const ContactDetail = (props) => {
         firstName,
         lastName,
         age,
-        photo: contact.photo,
+        photo,
       })
       .then((res) => {
         if (res.data.message.includes("contact saved")) {
           swal({
             title: "Contact Saved",
-            text: "Successfuly saving the contact",
+            text: `Successfuly saving the contact`,
             icon: "success",
             button: "Done",
           });
@@ -213,6 +215,7 @@ export const ContactDetail = (props) => {
                   <p className="col-grey">First Name</p>
                   <input
                     value={firstName}
+                    placeholder="Example : John"
                     className="col-dark-grey "
                     type="text"
                     onInput={(e) => setFirstName(e.target.value)}
@@ -239,6 +242,7 @@ export const ContactDetail = (props) => {
                   <p className="col-grey">Last Name</p>
                   <input
                     value={lastName}
+                    placeholder="Example : Doe"
                     className="col-dark-grey "
                     type="text"
                     onInput={(e) => setLastName(e.target.value)}

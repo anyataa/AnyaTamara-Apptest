@@ -12,9 +12,9 @@ export const Navbar = () => {
             <div className="profile-img">
               <input id="notif-btn" type="checkbox" hidden={true} />
               <label htmlFor="notif-btn">
-                <h2 className="fa fa-bell icon-notif label-brand">
+                <h2 className="fa fa-bell icon-notif label-brand col-secondary ">
                   click to know more &nbsp;&nbsp;&nbsp;&nbsp;
-                  <BsFillChatSquareDotsFill className="label-brand" />
+                  <BsFillChatSquareDotsFill className="label-brand col-secondary" />
                 </h2>
               </label>
               {/* <!-- Nav Bar Body --> */}

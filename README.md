@@ -29,7 +29,7 @@ To run locally:
 * See all phone list
 
 # License
-https://tldrlegal.com/license/mit-license
+[MIT](https://tldrlegal.com/license/mit-license)
 
 ## Contributing
 Contacticy is a personal project but your are welcome to contribute and submit a pull request!

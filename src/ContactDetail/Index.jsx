@@ -323,7 +323,7 @@ export const ContactDetail = (props) => {
               onClick={onDelete}
               type="button"
               value="Delete"
-              className="bottom-button bg-danger"
+              className="bottom-button "
             />
           </button>
         ) : (

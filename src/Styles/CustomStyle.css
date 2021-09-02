@@ -443,7 +443,7 @@
 
 .bottom-bar {
   position: fixed;
-  height: 3rem;
+  height: 4rem;
   width: 100%;
   bottom: 0;
   display: -webkit-box;
@@ -459,6 +459,7 @@
 
 .bottom-bar .bottom-bar-container {
   width: 80%;
+  font-weight: bold;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -475,6 +476,7 @@
 }
 
 .bottom-bar p {
+  margin-top: 10px;
   font-size: 18px;
   color: #6379f4;
 }

@@ -368,7 +368,7 @@
 // Bottom Footer
 .bottom-bar {
   position: fixed;
-  height: 3rem;
+  height: 4rem;
   width: 100%;
   bottom: 0;
   display: flex;
@@ -376,12 +376,14 @@
   justify-content: center;
   .bottom-bar-container {
     width: 80%;
+    font-weight: bold;
     flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   p {
+    margin-top: 10px;
     font-size: 18px;
     color: #6379f4;
   }

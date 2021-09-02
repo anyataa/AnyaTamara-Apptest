@@ -51,3 +51,21 @@
     color: #ffffff;
   }
 }
+
+// Avatar
+
+.contact-avatar {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(226, 226, 226);
+  background-image: url("./Icons/person.svg");
+  background-size: 45px 45px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 70px;
+  cursor: pointer;
+}
+
+.contact-avatar:hover {
+  background-color: rgba(101, 124, 236, 0.8);
+}

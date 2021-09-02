@@ -54,7 +54,7 @@ export const ContactDetail = (props) => {
     e.preventDefault();
   };
 
-  const onDelete = (willDelete) => {
+  const onDelete = () => {
     swal({
       title: "Are you sure you want to delete?",
       text: "you can not undo this action ",
@@ -106,17 +106,25 @@ export const ContactDetail = (props) => {
         photo: contact.photo,
       })
       .then((res) => {
+        if (res.data.message.includes("Contact edited")) {
+          swal({
+            title: "Contact Edited",
+            text: "Successfuly saving the changes",
+            icon: "success",
+            button: "Done",
+          });
+          dispatch(
+            onUpdateContact({
+              ...contact,
+              age: res.data.data.age,
+              id: res.data.data.id,
+              firstName: res.data.data.firstName,
+              lastName: res.data.data.lastName,
+              photo: res.data.data.photo,
+            })
+          );
+        }
         console.log(res);
-        dispatch(
-          onUpdateContact({
-            ...contact,
-            age: res.data.data.age,
-            id: res.data.data.id,
-            firstName: res.data.data.firstName,
-            lastName: res.data.data.lastName,
-            photo: res.data.data.photo,
-          })
-        );
       })
       .catch((e) => {
         console.log(e);
@@ -140,6 +148,12 @@ export const ContactDetail = (props) => {
             button: "Done",
           });
         } else {
+          swal({
+            title: "Error",
+            text: "Please try again and check your connection",
+            icon: "error",
+            button: "Done",
+          });
           console.log(res);
         }
       })
@@ -219,7 +233,6 @@ export const ContactDetail = (props) => {
           </li>
 
           <li>
-            {/* <InputBox label="Last Name" value={lastName} type={"text"} /> */}
             <div className="card-notification">
               <div className="divide-for-manage ">
                 <div>

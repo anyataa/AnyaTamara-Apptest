@@ -12,7 +12,7 @@ export const Navbar = () => {
               <input id="notif-btn" type="checkbox" hidden={true} />
               <label htmlFor="notif-btn">
                 <h2 className="fa fa-bell icon-notif">
-                  <FaStar />
+                  <FaStar className="label-brand" />
                 </h2>
               </label>
               {/* <!-- Nav Bar Body --> */}

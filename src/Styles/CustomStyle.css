@@ -94,19 +94,20 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 0;
 }
 
-.list-group-item {
+.list-group-item-custom {
+  list-style: none;
+  color: black;
   border-width: 0;
   margin-bottom: 2rem;
 }
 
-.list-group-item p {
+.list-group-item-custom p {
   font-size: 25px;
 }
 
-.list-group-item .list-div {
+.list-group-item-custom .list-div {
   border-radius: 30px;
   padding: 1rem;
   background: #ffffff;
@@ -122,7 +123,7 @@
   cursor: pointer;
 }
 
-.list-group-item .list-div:hover {
+.list-group-item-custom .list-div:hover {
   -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
           box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
 }
@@ -143,6 +144,11 @@
 .label-brand {
   font-family: "Lobster", cursive;
   font-size: 30px;
+  cursor: pointer;
+}
+
+.label-brand:hover {
+  color: purple;
 }
 
 .navbar {

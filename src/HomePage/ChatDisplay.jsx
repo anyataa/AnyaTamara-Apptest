@@ -1,9 +1,29 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import { AiOutlineWechat } from "react-icons/ai";
 import { FaPhone } from "react-icons/fa";
 import { SiAirplayvideo } from "react-icons/si";
+import { useDispatch } from "react-redux";
+import { onGetAction } from "../actions/contactListAction";
+import { API } from "../Util/constant";
 
 export const ChatDisplay = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getContact();
+  }, []);
+  const getContact = () => {
+    axios
+      .get(`${API}/contact`)
+      .then((res) => {
+        res.data.message == "Get contacts"
+          ? dispatch(onGetAction(res.data.data))
+          : console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div
       className="profile-bottom-container"

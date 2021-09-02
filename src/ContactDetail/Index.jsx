@@ -23,7 +23,7 @@ export const ContactDetail = (props) => {
     getContactById();
     props.match.params.id !== "addContact"
       ? setPhoto(contact.photo)
-      : setPhoto("N/A");
+      : setPhoto("Copy Image URL Here");
   }, []);
 
   const getContactById = () => {
@@ -50,7 +50,7 @@ export const ContactDetail = (props) => {
           .catch((error) => {
             console.log(error);
           })
-      : setPhoto("N/A");
+      : setPhoto("Copy Image URL Here");
     setFirstName("");
     setLastName("");
     setage(0);

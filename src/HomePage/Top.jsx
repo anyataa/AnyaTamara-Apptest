@@ -8,7 +8,10 @@ export const TopHome = () => {
       <div className="margin-profile-container">
         <div className="balance-detail">
           <div className="row-balance">
-            <h3 className="col-secondary"> Meet Friends, No Farewell</h3>
+            <h3 className="col-secondary">
+              {" "}
+              Meet Friends, <br /> No Farewell
+            </h3>
             <h1 className="col-secondary">
               Chat
               <br /> Hangout <br /> Connected
@@ -31,6 +34,10 @@ export const TopHome = () => {
                 Credits : Glitch.com and Sorry, your browser doesn't support
                 embedded videos.
               </video>
+              <p style={{ marginLeft: "10rem" }}>
+                {" "}
+                Video Credits : www.Glitch.com
+              </p>
             </div>
           </div>
         </div>

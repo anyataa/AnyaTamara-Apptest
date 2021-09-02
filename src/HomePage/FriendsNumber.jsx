@@ -9,7 +9,7 @@ export const FriendsNumber = () => {
       className="profile-bottom-container"
       style={{
         position: "fixed",
-        left: "31vw",
+        left: "29vw",
         width: "50vw",
       }}
     >

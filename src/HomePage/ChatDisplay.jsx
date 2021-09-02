@@ -8,9 +8,9 @@ export const ChatDisplay = () => {
     <div
       className="profile-bottom-container"
       style={{
-        position: "absolute",
+        position: "fixed",
         zIndex: "0",
-        right: "-12vw",
+        right: "-10vw",
         width: "50vw",
       }}
     >

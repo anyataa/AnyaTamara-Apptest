@@ -19,7 +19,7 @@ export const Navbar = () => {
               </label>
               {/* <!-- Nav Bar Body --> */}
               <div className="wrapper-notification">
-                <p className="detail-notif-duration">Did you know?</p>
+                <p className="detail-notif-duration-title">Did you know?</p>
                 <li>
                   <div className="card-notification">
                     <p className="detail-notif-duration">

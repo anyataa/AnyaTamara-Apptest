@@ -82,9 +82,15 @@
   background-color: #6379f4;
   border-radius: 20px;
   border: none;
+  font-weight: bold;
   padding: 20px 20px;
   width: 7.5rem;
-  color: #ffffff;
+  color: #d0fff1;
+}
+.bottom-button:hover {
+  color: #6379f4;
+  background-color: #d0fff1;
+  border: solid 3px #6379f4;
 }
 
 .card-notification-button:hover {

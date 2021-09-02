@@ -314,6 +314,18 @@
   }
 }
 
+.detail-notif-duration-title {
+  color: #d0fff1;
+  font-size: 19px;
+  font-weight: bold;
+  background-color: #5273e0;
+  width: 50%;
+  margin-left: -25%;
+  align-items: center;
+  text-align: center;
+  border-radius: 25px;
+}
+
 #notif-btn:checked ~ .wrapper-notification {
   // Styling Notif
   visibility: visible;

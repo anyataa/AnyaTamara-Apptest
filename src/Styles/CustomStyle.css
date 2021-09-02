@@ -372,6 +372,20 @@
   font-size: 19px;
 }
 
+.detail-notif-duration-title {
+  color: #d0fff1;
+  font-size: 19px;
+  font-weight: bold;
+  background-color: #5273e0;
+  width: 50%;
+  margin-left: -25%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 25px;
+}
+
 #notif-btn:checked ~ .wrapper-notification {
   visibility: visible;
   opacity: 1;

@@ -1,8 +1,28 @@
-import React from "react";
-import { FaArrowUp, FaPlus, FaWallet } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { onGetAction } from "../actions/contactListAction";
+import { API } from "../Util/constant";
 
 export const TopHome = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getContact();
+  }, []);
+
+  const getContact = () => {
+    axios
+      .get(`${API}/contact`)
+      .then((res) => {
+        res.data.message == "Get contacts"
+          ? dispatch(onGetAction(res.data.data))
+          : console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="profile-top-container set-margin-for-dash bg-primary">
       <div className="margin-profile-container">

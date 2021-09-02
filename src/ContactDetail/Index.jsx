@@ -22,7 +22,7 @@ export const ContactDetail = (props) => {
   useEffect(() => {
     getContactById();
     props.match.params.id !== "addContact"
-      ? setPhoto(contact.photo)
+      ? setPhoto("Copy Image URL Here")
       : setPhoto("Copy Image URL Here");
   }, []);
 
@@ -34,6 +34,7 @@ export const ContactDetail = (props) => {
             if (res.data.message.includes("Get")) {
               setFirstName(res.data.data.firstName);
               setLastName(res.data.data.lastName);
+              setPhoto(res.data.data.photo);
               setage(res.data.data.age);
               dispatch(
                 onUpdateContact({

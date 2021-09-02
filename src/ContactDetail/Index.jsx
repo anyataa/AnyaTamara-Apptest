@@ -143,7 +143,6 @@ export const ContactDetail = (props) => {
             })
           );
         }
-        console.log(res);
       })
       .catch((e) => {
         swal({
@@ -179,7 +178,6 @@ export const ContactDetail = (props) => {
             icon: "error",
             button: "Done",
           });
-          console.log(res);
         }
       })
       .catch((e) => {

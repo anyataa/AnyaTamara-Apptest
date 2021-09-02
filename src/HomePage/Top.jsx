@@ -10,7 +10,8 @@ export const TopHome = () => {
           <div className="row-balance">
             <h3 className="col-secondary"> Meet Friends, No Farewell</h3>
             <h1 className="col-secondary">
-              Chat, Hangout , <br /> Connected
+              Chat
+              <br /> Hangout <br /> Connected
             </h1>
           </div>
           <div className="row-balance"></div>

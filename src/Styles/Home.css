@@ -116,7 +116,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(111, 126, 211, 0.644);
   cursor: pointer;
   /* White */
   border: 1px solid #ffffff;
@@ -135,7 +135,7 @@
 }
 
 .button-alpha:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(51, 22, 146, 0.5);
 }
 
 .dashboard-top-up {

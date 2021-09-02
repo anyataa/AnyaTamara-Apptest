@@ -130,11 +130,6 @@
   color: rgba(58, 61, 66, 0.8);
 }
 
-.active {
-  color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity));
-  border-left: 5px solid #5273e0;
-}
-
 .label {
   font-family: "Nunito Sans", sans-serif;
   font-style: normal;

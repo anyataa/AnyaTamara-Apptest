@@ -79,7 +79,7 @@ export const ContactItem = (contact) => {
     <div>
       <h3>Contact List</h3>
       <ul
-        style={{ marginTop: "2rem", height: "65%" }}
+        style={{ marginTop: "2rem", height: "65vh" }}
         className="list-group  overflow-auto"
       >
         {errorMessage !== "" ? (

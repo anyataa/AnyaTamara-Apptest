@@ -21,6 +21,7 @@ export const ContactDetail = (props) => {
 
   useEffect(() => {
     getContactById();
+    setPhoto(contact.photo);
   }, []);
 
   const getContactById = () => {
@@ -98,6 +99,7 @@ export const ContactDetail = (props) => {
   };
 
   const putMehod = () => {
+    console.log(photo, contact.photo);
     axios
       .put(`${API}/contact/${props.match.params.id}`, {
         firstName,
@@ -129,6 +131,12 @@ export const ContactDetail = (props) => {
         console.log(res);
       })
       .catch((e) => {
+        swal({
+          title: "Fail to Edit",
+          text: `Please check your connection and retry`,
+          icon: "error",
+          button: "Done",
+        });
         console.log(e);
       });
   };

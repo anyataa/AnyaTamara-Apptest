@@ -10,7 +10,7 @@
 
 ## Overview
 
-Contactify is a web app where you can connect and saves contact amongst your friends! This project is made part of BTPN Frontend's Test on September, 2021.
+Contactify is a web app where you can connect and saves contact amongst your friends! This project is made part of Frontend's Test on September, 2021.
 
 ## Getting Started
 

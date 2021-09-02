@@ -15,12 +15,12 @@ Contactify is a web app where you can connect and saves contact amongst your fri
 ## Getting Started
 
 Head over to our heroku deployed [website](https://contactlist-btpn-app.herokuapp.com/) for a demo.  
-To run locally:
-**Start**  
-`npm start`
-**Build for Production**  
-`npm build`
-**Test**  
+To run locally:  
+**1. Start**  
+`npm start`  
+**2. Build for Production**  
+`npm build`  
+**3. Test**   
 `npm test`
 
 # Features

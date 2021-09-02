@@ -34,6 +34,10 @@ export const TopHome = () => {
                 Credits : Glitch.com and Sorry, your browser doesn't support
                 embedded videos.
               </video>
+              <p style={{ marginLeft: "10rem" }}>
+                {" "}
+                Video Credits : www.Glitch.com
+              </p>
             </div>
           </div>
         </div>

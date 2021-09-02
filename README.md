@@ -10,7 +10,7 @@
 
 ## Overview
 
-Contactify is a web app where you can connect and saves contact amongst your friends! This project is made part of BTPN Frontend's Test on September, 2021.
+Contactify is a web app where you can connect and saves contact amongst your friends! This project is made part of Frontend's Test on September, 2021.
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ To run locally:
 * See all phone list
 
 # License
-https://tldrlegal.com/license/mit-license
+[MIT](https://tldrlegal.com/license/mit-license)
 
 ## Contributing
 Contacticy is a personal project but your are welcome to contribute and submit a pull request!

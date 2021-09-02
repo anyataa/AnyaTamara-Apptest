@@ -65,7 +65,7 @@
 }
 
 .col-green {
-  color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity));
+  color: #d0fff1;
 }
 
 .text-center {

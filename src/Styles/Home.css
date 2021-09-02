@@ -235,6 +235,11 @@
   border-radius: 25px;
 }
 
+.margin-profile-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .chart-wrapper {
   width: 90%;
   margin-left: -1rem;

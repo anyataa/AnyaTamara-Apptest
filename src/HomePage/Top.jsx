@@ -10,15 +10,8 @@ export const TopHome = () => {
           <div className="row-balance">
             <h3 className="col-secondary"> Meet Friends, No Farewell</h3>
             <h1 className="col-secondary">
-              Chat, Reminds, <br /> Hangout
+              Chat, Hangout , <br /> Connected
             </h1>
-            <Link style={{ textDecoration: "none" }} to="/retrieval">
-              <div className="button-alpha">
-                <FaWallet></FaWallet>
-
-                <h3>Start Now</h3>
-              </div>
-            </Link>
           </div>
           <div className="row-balance"></div>
           <div className="row-balance">

@@ -47,7 +47,7 @@ export const LeftBar = () => {
             <p className="label label-size">Add Contact</p>
           </div>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/phoneView">
+        {/* <Link style={{ textDecoration: "none" }} to="/phoneView">
           <div
             className={
               path == "/retrieval" ? "item-wrapper active" : "item-wrapper"
@@ -66,8 +66,8 @@ export const LeftBar = () => {
           >
             <FaSmile className="label-size" />
             <p className="label label-size">UI Design</p>
-          </div>
-        </Link>
+          </div> */}
+        {/* </Link> */}
       </div>
       <div className="item-wrapper">
         <FaCode className="label-size" />

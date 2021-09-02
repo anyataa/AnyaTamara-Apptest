@@ -21,7 +21,9 @@ export const ContactDetail = (props) => {
 
   useEffect(() => {
     getContactById();
-    setPhoto(contact.photo);
+    props.match.params.id !== "addContact"
+      ? setPhoto(contact.photo)
+      : setPhoto("N/A");
   }, []);
 
   const getContactById = () => {
@@ -48,7 +50,20 @@ export const ContactDetail = (props) => {
           .catch((error) => {
             console.log(error);
           })
-      : console.log("POST");
+      : setPhoto("N/A");
+    setFirstName("");
+    setLastName("");
+    setage(0);
+    dispatch(
+      onUpdateContact({
+        ...contact,
+        age: 0,
+        id: "0",
+        firstName: "",
+        lastName: "",
+        photo: "",
+      })
+    );
   };
 
   const submitForm = (e) => {
@@ -128,7 +143,6 @@ export const ContactDetail = (props) => {
             })
           );
         }
-        console.log(res);
       })
       .catch((e) => {
         swal({
@@ -164,7 +178,6 @@ export const ContactDetail = (props) => {
             icon: "error",
             button: "Done",
           });
-          console.log(res);
         }
       })
       .catch((e) => {
@@ -186,7 +199,10 @@ export const ContactDetail = (props) => {
     <div>
       <div className="personal-information-top-container">
         <div className="set-to-left">
-          <h1 className="col-dark-grey">Details</h1>
+          <h1 className="col-dark-grey">
+            {" "}
+            {props.match.params.id !== "addContact" ? "Details" : "Add Contact"}
+          </h1>
         </div>
         <form onSubmit={(e) => submitForm(e)} className="create-contact-form">
           <ImageInput
@@ -297,17 +313,22 @@ export const ContactDetail = (props) => {
         </ul>
       </div>
       <div className="set-transfer-button-confirmation">
-        <button
-          style={{ border: "none", backgroundColor: "transparent" }}
-          to={`/transfer/${props.match.params.id}/confirmation`}
-        >
-          <input
-            onClick={onDelete}
-            type="button"
-            value="Delete"
-            className="bottom-button bg-danger"
-          />
-        </button>
+        {props.match.params.id !== "addContact" ? (
+          <button
+            style={{ border: "none", backgroundColor: "transparent" }}
+            to={`/transfer/${props.match.params.id}/confirmation`}
+          >
+            <input
+              onClick={onDelete}
+              type="button"
+              value="Delete"
+              className="bottom-button bg-danger"
+            />
+          </button>
+        ) : (
+          <div></div>
+        )}
+
         <button
           style={{ border: "none", backgroundColor: "transparent" }}
           to={`/transfer/${props.match.params.id}/confirmation`}

@@ -7,7 +7,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
       <div className="container">
         <div className="d-flex justify-content-between nav-container">
-          <h2 className="label-brand">Contactify</h2>
+          <h2 className="label-brand col-secondary">Contactify</h2>
           <div>
             <div className="profile-img">
               <input id="notif-btn" type="checkbox" hidden={true} />
